@@ -1,0 +1,34 @@
+import { COLORS, FONT_SIZE } from "../../constants/theme";
+
+const styles = {
+    service: {
+        flexDirection: 'row',
+        flex: 1,
+        backgroundColor: COLORS.white,
+        padding: 12,
+        borderWidth: 1,
+        borderColor: COLORS.gray4,
+    },
+
+    containerText: {
+        flex: 1,
+    },
+
+    containerButton: {
+        
+    },
+
+    description: {
+        fontSize: FONT_SIZE.md,
+        color: COLORS.gray3,
+        marginTop: 5,
+    },
+
+    price: {
+        fontSize: FONT_SIZE.md,
+        color: COLORS.blue,
+        marginTop: 3,
+    },
+}
+
+export {styles};
