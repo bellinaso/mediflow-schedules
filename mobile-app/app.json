@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "agendei-mobile",
-    "slug": "agendei-mobile",
+    "name": "mediflow-mobile",
+    "slug": "mediflow-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
