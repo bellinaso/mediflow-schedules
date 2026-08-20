@@ -1,10 +1,16 @@
 import repositioryDoctor from "../repositories/repositiory.doctor.js";
 
-async function getAll() {
-
-    const doctors = await repositioryDoctor.getAll();
+async function getAll(name) {
+    const doctors = await repositioryDoctor.getAll(name);
     
     return doctors;
 }
 
-export default { getAll }
+
+async function insert(name, specialty, icon) {
+    const doctor = await repositioryDoctor.insert(name, specialty, icon);
+    
+    return doctor;
+}
+
+export default { getAll, insert }
