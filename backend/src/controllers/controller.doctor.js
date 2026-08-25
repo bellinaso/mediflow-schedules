@@ -5,7 +5,7 @@ async function getAll(req, res) {
     
     const doctors = await serviceDoctor.getAll(name);
     
-    res.status(200).send(doctors);
+    res.status(200).json(doctors);
 }
 
 
@@ -18,7 +18,27 @@ async function insert(req, res) {
     
     const doctor = await serviceDoctor.insert(name, specialty, icon);
     
-    res.status(201).send(doctor);
+    res.status(201).json(doctor);
 }
 
-export default { getAll, insert }
+
+async function edit(req, res) {
+    const id = req.params.id;
+    const { name, specialty, icon } = req.body;
+    
+    const doctor = await serviceDoctor.edit(id, name, specialty, icon);
+    
+    res.status(200).json(doctor);
+}
+
+
+async function exclude(req, res) {
+    const id = req.params.id;
+    
+    const doctor = await serviceDoctor.exclude(id);
+    
+    res.status(200).json(doctor);
+}
+
+
+export default { getAll, insert, edit, exclude }

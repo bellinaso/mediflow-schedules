@@ -22,4 +22,23 @@ async function insert(name, specialty, icon) {
     return doctor[0];
 }
 
-export default { getAll, insert }
+
+async function edit(id, name, specialty, icon) {
+    let sql = "UPDATE doctors SET name=?, specialty=?, icon=? WHERE id=?";
+    
+    await query(sql, [name, specialty, icon, id]);
+
+    return id;
+}
+
+
+async function exclude(id) {
+    let sql = "DELETE FROM doctors WHERE id=?";
+    
+    await query(sql, [id]);
+
+    return id;
+}
+
+
+export default { getAll, insert, edit, exclude }

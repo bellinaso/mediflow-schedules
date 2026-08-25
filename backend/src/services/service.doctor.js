@@ -13,4 +13,19 @@ async function insert(name, specialty, icon) {
     return doctor;
 }
 
-export default { getAll, insert }
+
+async function edit(id, name, specialty, icon) {
+    const doctor = await repositioryDoctor.edit(id, name, specialty, icon);
+    
+    return doctor;
+}
+
+
+async function exclude(id) {
+    const doctor = await repositioryDoctor.exclude(id);
+    
+    return doctor;
+}
+
+
+export default { getAll, insert, edit, exclude }
