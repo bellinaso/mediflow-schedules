@@ -28,4 +28,11 @@ async function exclude(id) {
 }
 
 
-export default { getAll, insert, edit, exclude }
+async function getServices(id) {
+    const services = await repositioryDoctor.getServices(id);
+    
+    return services;
+}
+
+
+export default { getAll, insert, edit, exclude, getServices }

@@ -41,4 +41,18 @@ async function exclude(id) {
 }
 
 
-export default { getAll, insert, edit, exclude }
+async function getServices(id) {
+    let filter = []
+    
+    let sql = "SELECT * FROM doctors_services ";
+    if(id) {
+        filter.push("%" + id + "%")
+        sql += "WHERE id_doctor = ?";
+    }
+    sql += " ORDER BY id";
+    const services = await query(sql, filter);
+    return services;
+}
+
+
+export default { getAll, insert, edit, exclude, getServices }

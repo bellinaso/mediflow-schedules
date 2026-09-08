@@ -41,4 +41,13 @@ async function exclude(req, res) {
 }
 
 
-export default { getAll, insert, edit, exclude }
+async function getServices(req, res) {
+    const id  = req.params.id;
+    
+    const services = await serviceDoctor.getServices(id);
+    
+    res.status(200).json(services);
+}
+
+
+export default { getAll, insert, edit, exclude, getServices }
